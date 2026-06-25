@@ -29,30 +29,69 @@ attack lifecycles, SIEM configuration, and defensive detection strategies.
 
 ## Steps
 
-*Ref 1: Creating the Meterpreter payload with msfvenom on Kali Linux*
+* First msfvenom attempt failing with directory error, mkdir fix and successful payload creation*
+<img width="1928" height="1040" alt="1 making payload" src="https://github.com/user-attachments/assets/de0aff0b-cf40-498e-b83e-cef0d5969d2a" />
 
-*Ref 2: Troubleshooting — directory not found error and fix*
 
-*Ref 3: Hosting bayload.exe via Python 3 HTTP server*
+*Opening msfconsole*
+<img width="1928" height="1040" alt="2 opening msfconsole" src="https://github.com/user-attachments/assets/812472e3-6ac8-47fe-9f9d-3ae82ee52d49" />
 
-*Ref 4: Windows VM downloading payload from Kali HTTP server*
 
-*Ref 5: SmartScreen warning bypassed — payload executed*
+*using msf multihandler to configure payload*
+<img width="1928" height="1040" alt="3 using msf multihandler to configure payload" src="https://github.com/user-attachments/assets/b3e0fb34-f0e9-487c-b9dc-275ae68e0e43" />
 
-*Ref 6: Meterpreter session 1 opened — remote access established*
 
-*Ref 7: Remote directory created on Windows VM from Kali*
+*creating http server*
+<img width="1928" height="1040" alt="4 creating http server with python 3" src="https://github.com/user-attachments/assets/f0718f66-724d-40bb-abce-ce43cff14833" />
 
-*Ref 8: Splunk returning 0 events — logging misconfiguration identified*
 
-*Ref 9: inputs.conf created and fixed to collect Windows Event Logs*
+*running bayload on windows VM*
+<img width="1928" height="1040" alt="5 directroy created on windows vm" src="https://github.com/user-attachments/assets/a5e6836d-e063-4513-9184-0b28831625dc" />
 
-*Ref 10: PowerShell permission error and fix — reopened as Administrator*
 
-*Ref 11: Process creation auditing enabled via auditpol and registry*
+*Creating directory on kali VM*
+<img width="1928" height="1040" alt="6 creating directory" src="https://github.com/user-attachments/assets/c20acfcd-6b8e-4eba-95c4-8a00944bd15e" />
 
-*Ref 12: 4,722 Windows Event Logs now flowing into Splunk*
 
-*Ref 13: bayload.exe detected in Splunk via EventCode 4688*
+*Directory from kali created on windows*
+<img width="1928" height="1040" alt="7 directory created on kali created on windows" src="https://github.com/user-attachments/assets/29b17ff9-9ec3-4b6f-b132-76c291a2939d" />
 
-*Ref 14: Full IOC table — account, process path, command line, parent process*
+
+*events not showing in splunk due to misconfiguration*
+<img width="1928" height="1040" alt="8 events not showing bc of misconfig" src="https://github.com/user-attachments/assets/f20dd2cf-28ae-4860-bcd9-f33672f89e89" />
+
+
+*Creating inputs.conf*
+<img width="1928" height="1040" alt="9 creating inputs  conf" src="https://github.com/user-attachments/assets/356fbcd2-7bf1-4338-8928-f5536429ec10" />
+
+
+*INputs.conf created*
+<img width="1928" height="1040" alt="10 inputs conf created" src="https://github.com/user-attachments/assets/82be40ea-d510-48d2-b6e8-76c0b9eb81b7" />
+
+
+*Restarting forwarder*
+<img width="1928" height="1040" alt="11 restarting forwarder" src="https://github.com/user-attachments/assets/460ba8cb-d9e7-4727-841e-d0b4d896f19d" />
+
+
+4,722 Windows Event Logs now flowing into Splunk*
+<img width="1928" height="1040" alt="12 events shoowing" src="https://github.com/user-attachments/assets/f91e1c3c-b895-4a62-9002-0dfecd54db28" />
+
+
+bayload.exe detected in Splunk via EventCode 4688*
+<img width="1928" height="1040" alt="13 event code 4688" src="https://github.com/user-attachments/assets/b40d54c1-38d8-40c5-bd45-2f605e30445d" />
+
+
+*Time window search*
+<img width="1928" height="1040" alt="14 time frame event search" src="https://github.com/user-attachments/assets/a6aa53f6-bf1c-46f9-a61a-ab377af49882" />
+
+*Bayload found*
+<img width="1928" height="1040" alt="15 found bayload" src="https://github.com/user-attachments/assets/97993b2f-0ae0-4992-82cc-23fb301604de" />
+*creator found*
+<img width="1928" height="1040" alt="16 creator found" src="https://github.com/user-attachments/assets/2dd0689a-49ba-4a2d-a44a-7171789446c0" />
+*Account and logon ID*
+<img width="1928" height="1040" alt="17 aacount and logon ID" src="https://github.com/user-attachments/assets/edca0584-2f65-425f-b16a-e03a2584bef7" />
+*configuring alert*
+<img width="1928" height="1040" alt="18 alert config" src="https://github.com/user-attachments/assets/1f9661c7-f369-43b6-b06c-7ee76271b276" />
+<img width="1928" height="1040" alt="19 alert config" src="https://github.com/user-attachments/assets/8b9115e1-d671-4db6-91d4-0527021d109a" />
+*Alert active*
+<img width="1928" height="1040" alt="20 alert active" src="https://github.com/user-attachments/assets/5063749f-b564-4d29-a693-fd4b4b839188" />
